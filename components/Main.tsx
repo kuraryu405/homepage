@@ -1,3 +1,5 @@
+import Skill from "./skill";
+
 export default function Main() {
     return (
         <>
@@ -26,12 +28,7 @@ export default function Main() {
             <h1 className="text-4xl font-bold mb-4">
                 Skills
             </h1>
-            <div className="flex flex-wrap gap-5 justify-center items-center">
-                <img src="/icon.png" />
-                <img src="/icon.png" />
-                <img src="/icon.png" />
-                <img src="/icon.png" />
-            </div>
+            <Skill />
         </div>
         </>
     )
