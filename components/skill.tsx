@@ -11,7 +11,7 @@ const skillData: SkillType[] = [
     {
         name: 'CSS',
         image: '/skill/css.png',
-        comment: 'CSSも一応かけます、一時期Sassを使っていましたがいまではTailwind CSSを使っています。',
+        comment: 'CSSも一応かけます、一時期Sassを使っていましたが表現の幅が広すぎて使いづらかったので使わなくなりました。',
     },
     
     {
@@ -30,23 +30,23 @@ const skillData: SkillType[] = [
     {
         name: 'React',
         image: '/skill/react.png',
-        comment: 'React is a JavaScript library for building user interfaces.',
+        comment: 'Reactも勉強中です。 Next.jsも最近勉強しはじめましたが、FE/BEで責務をに明確分離したい気持ちがありまだ慣れない。',
     },
     {
         name: 'NestJS',
         image: '/skill/nest.png',
-        comment: 'NestJS is a framework for building server-side applications.',
+        comment: 'NestJSもつかったことがあります。TSでかけるのでうれしい、controllerかいてる時が一番楽しい',
     },
     {
         name: 'GNU/Linux',
         image: '/skill/linux.png',
-        comment: 'GNU/Linux is a free and open source operating system.',
+        comment: '元々薄々興味があったのですが友達の影響でArchLinux派生のOmarchyを入れてみました。自分好みにカスタムできて楽しい',
     },
 ];
 
 const SkillCard = ({ skill }: { skill: SkillType }) => {
     return (
-        <div className="card bg-base-100 shadow-sm h-full hover:shadow-lg transition-shadow">
+        <div className="card bg-base-100 shadow-sm h-full hover:shadow-lg transition-shadow bg-primary">
             <figure className="px-6 pt-6 flex justify-center">
                 <img
                     src={skill.image}
@@ -54,9 +54,9 @@ const SkillCard = ({ skill }: { skill: SkillType }) => {
                     className="w-24 h-24 object-contain"
                 />
             </figure>
-            <div className="card-body items-center text-center">
+            <div className="card-body items-center text-center text-black">
                 <h2 className="card-title text-lg font-semibold">{skill.name}</h2>
-                <p className="text-sm text-base-content/80">{skill.comment}</p>
+                <p className="text-sm text-base-content/80 text-black">{skill.comment}</p>
             </div>
         </div>
     );
