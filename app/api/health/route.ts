@@ -4,8 +4,13 @@ import type { Health as HealthType } from '@/types/health';
 
 export async function GET(): Promise<NextResponse<HealthType>> {
   try {
-    const { rows } = await sql<HealthType>`SELECT * FROM health ORDER BY created_at DESC LIMIT 1`;
-    
+    // const { rows } = await sql<HealthType>`SELECT * FROM health ORDER BY created_at DESC LIMIT 1`;
+    const { rows } = await sql<HealthType>`
+      SELECT steps, sleepTime as "sleepTime" 
+      FROM health 
+      ORDER BY created_at DESC 
+      LIMIT 1
+      `;
     console.log('GET request - rows found:', rows.length);
 
     if (!rows[0]) {
