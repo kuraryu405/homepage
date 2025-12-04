@@ -61,21 +61,24 @@ export async function POST(request: Request) {
       );
     }
     
-    // データを数値に変換（様々なキー名に対応）
+    // データを数値に変換
     const steps = Number(
-      body.steps || body.Step || body.step || 0
+      body.steps || 0
     ) || 0;
-    const sleepTime = Number(
-      body.sleepTime || body.SleepTime || body.sleep_time || 0
+    // sleepTimeは秒数で送られてくるので、時間に変換（3600秒 = 1時間）
+    const sleepTimeInSeconds = Number(
+      body.sleepTime || 0
     ) || 0;
+    const sleepTime = sleepTimeInSeconds / 3600; // 秒を時間に変換
     
-    console.log('Parsed values - steps:', steps, 'sleepTime:', sleepTime);
+    console.log('Parsed values - steps:', steps, 'sleepTime (seconds):', sleepTimeInSeconds, 'sleepTime (hours):', sleepTime);
 
     // テーブルが存在しない場合は作成
+    // sleepTimeは時間（小数を含む可能性がある）なので、NUMERIC型を使用
     await sql<HealthType>`CREATE TABLE IF NOT EXISTS health (
       id SERIAL PRIMARY KEY,
       steps INT NOT NULL,
-      sleepTime INT NOT NULL,
+      sleepTime NUMERIC(5, 2) NOT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`;
 
