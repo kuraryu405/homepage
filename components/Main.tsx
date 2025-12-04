@@ -33,16 +33,15 @@ export default function Main() {
                     About Me
                 </h1>
         </div>
-        <div className="ml-15 mr-15 flex justify-between items-center pb-15">
-
-            <div className="w-1/2 flex justify-center items-center">
+        <div className="ml-15 mr-15 grid gap-8 items-center pb-15 md:grid-cols-2">
+            <div className="flex justify-center">
                 <div className="avatar">
                     <div className="rounded-full w-60 h-60">
                         <img src="/icon.png" />
                     </div>
                 </div>
             </div>
-            <div className="w-1/2">
+            <div>
                 <h2 className="text-4xl font-bold mb-4">Hello World!</h2>
                 <p className="text-lg">東京にある情報系の学部に所属しています。</p>
                 <p className="text-lg">最近はプログラミングやGNU/Linuxに興味を持っています。</p>
