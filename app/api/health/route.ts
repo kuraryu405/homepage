@@ -66,13 +66,13 @@ export async function POST(request: Request) {
       );
     }
     
-    // データを数値に変換
+    // データを数値に変換（キー名の大文字・小文字揺れにも対応）
     const steps = Number(
-      body.steps || 0
+      body.steps ?? body.Steps ?? 0
     ) || 0;
     // sleepTimeは秒数で送られてくるので、時間に変換（3600秒 = 1時間）
     const sleepTimeInSeconds = Number(
-      body.sleepTime || 0
+      body.sleepTime ?? body.SleepTime ?? body.sleeptime ?? 0
     ) || 0;
     const sleepTime = sleepTimeInSeconds / 3600; // 秒を時間に変換
     
