@@ -63,10 +63,10 @@ export default function Main() {
                 <div className="w-full max-w-4xl">
                     <Card content={
                         <div className="p-10">
-                            <h2 className="text-5xl font-bold mb-8 text-center">健康データ</h2>
+                            <h2 className="text-3xl font-bold mb-8 text-center">健康データ</h2>
                             <div className="space-y-6 text-center">
-                                <p className="text-3xl">歩数: {healthData.steps.toLocaleString()} 歩</p>
-                                <p className="text-3xl">睡眠時間: {healthData.sleepTime} 時間</p>
+                                <p className="text-2xl">歩数: {healthData.steps.toLocaleString()} 歩</p>
+                                <p className="text-2xl">睡眠時間: {healthData.sleepTime} 時間</p>
                             </div>
                         </div>
                     } />
