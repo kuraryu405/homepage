@@ -65,7 +65,7 @@ const SkillCard = ({ skill }: { skill: SkillType }) => {
 export default function Skill() {
     return (
         <div className="w-full flex justify-center">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl w-full">
                 {skillData.map((skill) => (
                     <SkillCard key={skill.name} skill={skill} />
                 ))}
